@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f59f46d7-d9bc-4936-8380-bc1e6932db35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/classes/cells/ChangeDir.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/Field.js" afterPath="$PROJECT_DIR$/src/js/classes/Field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/balls/Ball.js" afterPath="$PROJECT_DIR$/src/js/classes/balls/Ball.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Cell.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Cell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Destructor.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Destructor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Spawner.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Spawner.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.html" />
-    </list>
+    <list default="true" id="f59f46d7-d9bc-4936-8380-bc1e6932db35" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -448,19 +439,18 @@
       <updated>1507631905105</updated>
       <workItem from="1507631906327" duration="447000" />
       <workItem from="1521127906986" duration="4946000" />
-      <workItem from="1521174684436" duration="7279000" />
+      <workItem from="1521174684436" duration="7355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12672000" />
+    <option name="totallyTimeSpent" value="12748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20811099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20811099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
