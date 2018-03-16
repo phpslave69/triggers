@@ -36,24 +36,36 @@ class Ball {
                 console.log('no dir!');
         }
         //if the bal have reached the border
+        let flag = false;
         if (this.x >= width - cellSize / 2 + 1) {
             this.x = width - cellSize / 2;
             this.dir = STOP;
+            flag = true;
         }
 
         if (this.x <= cellSize / 2 - 1) {
             this.x = cellSize;
             this.dir = STOP;
+            flag = true;
         }
 
         if (this.y >= height - cellSize / 2 + 1) {
             this.y = height - cellSize / 2;
             this.dir = STOP;
+            flag = true;
         }
 
         if (this.y <= cellSize / 2 - 1) {
             this.y = cellSize / 2;
             this.dir = STOP;
+            flag = true;
+        }
+        if(flag){
+            for(let i = 0; i < field.balls.length; i++){
+                if(field.balls[i].id == this.id){
+                    field.balls.splice(i, 1);
+                }
+            }
         }
     }
 

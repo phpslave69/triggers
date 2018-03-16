@@ -24,7 +24,10 @@ class Field {
         this.cells[0][1] = new Spawner(0, 1, MOVERIGHT, 70, 1);
         this.cells[7][1] = new Destructor(7, 1);
         this.cells[3][1] = new ChangeDir(3, 1, MOVEDOWN);
-        this.cells[3][6] = new ChangeDir(3, 6, MOVERIGHT);
+        this.cells[3][3] = new Counter(3, 3);
+        this.cells[3][8] = new ChangeDir(3, 8, MOVERIGHT);
+        this.cells[6][8] = new Teleport(6, 8, TELEIN, 1);
+        this.cells[2][6] = new Teleport(2, 6, TELEOUT, 1);
         this.cells[5][6] = new ChangeDir(5, 6, MOVEUP);
         this.cells[5][1] = new ChangeDir(5, 1, MOVERIGHT);
     }

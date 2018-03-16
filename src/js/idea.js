@@ -20,6 +20,8 @@ const MOVEUP = 1;
 const MOVERIGHT = 2;
 const MOVEDOWN = 3;
 const MOVELEFT = 4;
+const TELEIN = 0;
+const TELEOUT = 1;
 
 function setup() {
     frameRate(fr);
