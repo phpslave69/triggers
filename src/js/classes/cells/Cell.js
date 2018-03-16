@@ -4,6 +4,7 @@
 
 class Cell {
     constructor(x, y) {
+        this.id = cellId++;
         this.x = x * cellSize + cellSize / 2;
         this.y = y * cellSize + cellSize / 2;
         this.color = 'white';

@@ -8,6 +8,7 @@ class Ball {
         this.y = y;
         this.dir = dir;
         this.speed = speed / 100;
+        this.id = ballId++;
     }
 
     update() {

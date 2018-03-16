@@ -12,6 +12,8 @@ let frame = 0;
 let tick = 0;
 let field;
 let ticked = false;
+let cellId = 0;
+let ballId = 0;
 
 const STOP = 0;
 const MOVEUP = 1;

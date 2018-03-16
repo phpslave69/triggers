@@ -21,7 +21,7 @@ class Field {
     }
 
     addInitCells() {
-        this.cells[0][1] = new Spawner(0, 1, MOVERIGHT, 70, 2);
+        this.cells[0][1] = new Spawner(0, 1, MOVERIGHT, 70, 1);
         this.cells[7][1] = new Destructor(7, 1);
         this.cells[3][1] = new ChangeDir(3, 1, MOVEDOWN);
         this.cells[3][6] = new ChangeDir(3, 6, MOVERIGHT);
