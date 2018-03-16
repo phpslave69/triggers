@@ -1,5 +1,5 @@
 // User input
-const rows = 20;
+const rows = 10;
 const cols = 20;
 const cellSize = 50;
 const fr = 60;
@@ -11,6 +11,7 @@ const forUI = 50;
 let frame = 0;
 let tick = 0;
 let field;
+let interFace;
 let ticked = false;
 let cellId = 0;
 let ballId = 0;
@@ -26,6 +27,7 @@ const TELEOUT = 1;
 function setup() {
     frameRate(fr);
     field = new Field();
+    interFace = new Interface();
     createCanvas(width, height + forUI);
 }
 
@@ -39,4 +41,9 @@ function draw() {
     }
     background(255);
     field.update();
+    interFace.update();
+}
+
+function mousePressed() {
+    interFace.setState();
 }

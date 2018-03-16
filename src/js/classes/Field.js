@@ -12,9 +12,9 @@ class Field {
     }
 
     initGrid() {
-        for (let i = 0; i < rows; i++) {
+        for (let i = 0; i < cols; i++) {
             this.cells[i] = [];
-            for (let j = 0; j < cols; j++) {
+            for (let j = 0; j < rows; j++) {
                 this.cells[i][j] = new Cell(j, i);
             }
         }
@@ -26,7 +26,7 @@ class Field {
         this.cells[3][1] = new ChangeDir(3, 1, MOVEDOWN);
         this.cells[3][3] = new Counter(3, 3);
         this.cells[5][3] = new Counter(5, 3);
-        this.cells[3][6] = new RandomDir(3,6, [MOVEUP, MOVELEFT], 1);
+        this.cells[3][6] = new RandomDir(3, 6, [MOVEUP, MOVELEFT], 1);
         this.cells[3][8] = new ChangeDir(3, 8, MOVERIGHT);
         this.cells[6][8] = new Teleport(6, 8, TELEIN, 1);
         this.cells[2][6] = new Teleport(2, 6, TELEOUT, 1);
@@ -41,8 +41,8 @@ class Field {
     }
 
     updateCells() {
-        for (let i = 0; i < rows; i++) {
-            for (let j = 0; j < cols; j++) {
+        for (let i = 0; i < cols; i++) {
+            for (let j = 0; j < rows; j++) {
                 this.cells[i][j].update();
             }
         }
@@ -55,8 +55,8 @@ class Field {
     }
 
     show() {
-        for (let i = 0; i < rows; i++) {
-            for (let j = 0; j < cols; j++) {
+        for (let i = 0; i < cols; i++) {
+            for (let j = 0; j < rows; j++) {
                 noFill();
                 stroke(0);
                 strokeWeight(1);
