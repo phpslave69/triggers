@@ -6,13 +6,16 @@ class Destructor extends Cell {
     constructor(x, y) {
         super(x, y);
         this.color = 'black';
+        this.text = 'destroy';
+        this.textColor = 'white';
+        this.textSize = 13;
+        this.getDist = 10;
     }
 
     destroy() {
-        for (let i = field.balls.length - 1; i >= 0; i--) {
-            if (dist(this.x, this.y, field.balls[i].x, field.balls[i].y) < 10) {
-                field.balls.splice(i, 1);
-            }
+        let ballId = this.getNearBall();
+        if (ballId !== false) {
+            field.balls.splice(ballId, 1);
         }
     }
 

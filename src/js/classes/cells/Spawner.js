@@ -9,6 +9,7 @@ class Spawner extends Cell {
         this.rate = spawnrate;
         this.speed = speed;
         this.color = 'green';
+        this.text = 'spawn';
     }
 
     spawn() {

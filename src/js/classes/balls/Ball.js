@@ -31,6 +31,8 @@ class Ball {
             case MOVERIGHT:
                 this.x += this.speed;
                 break;
+            default:
+                console.log('no dir!');
         }
         //if the bal have reached the border
         if (this.x >= width - cellSize / 2 + 1) {
@@ -44,12 +46,12 @@ class Ball {
         }
 
         if (this.y >= height - cellSize / 2 + 1) {
-            this.x = height - cellSize / 2;
+            this.y = height - cellSize / 2;
             this.dir = STOP;
         }
 
         if (this.y <= cellSize / 2 - 1) {
-            this.x = cellSize / 2;
+            this.y = cellSize / 2;
             this.dir = STOP;
         }
     }
