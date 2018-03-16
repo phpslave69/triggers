@@ -1,6 +1,6 @@
 // User input
-const rows = 10;
-const cols = 10;
+const rows = 20;
+const cols = 20;
 const cellSize = 50;
 const fr = 60;
 

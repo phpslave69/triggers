@@ -24,9 +24,7 @@ class Counter extends Cell{
                 }else{
                 	this.counted.push(field.balls[balls[i]].id);
                 	this.text++;
-
                 }
-                
             }
         }
 	}
