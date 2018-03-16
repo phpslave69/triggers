@@ -8,7 +8,10 @@
     <script src="src/js/idea.js"></script>
     <script src="src/js/classes/Field.js"></script>
     <script src="src/js/classes/cells/Cell.js"></script>
-    
+    <script src="src/js/classes/cells/Spawner.js"></script>
+    <script src="src/js/classes/cells/Destructor.js"></script>
+    <script src="src/js/classes/balls/Ball.js"></script>
+
 
     <script src="lib/js/p5.min.js"></script>
 
