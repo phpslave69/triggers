@@ -4,14 +4,15 @@ class Teleport extends Cell{
 		this.type = type;
 		this.port = port;
 		this.color = 'crimson';
+		this.textColor = 'white';
 		this.setText();
 	}
 
 	setText(){
 		if(this.type == TELEIN){
-			this.text = 'teleIn';
+			this.text = 'tele\nIn';
 		}else{
-			this.text = 'teleOut';
+			this.text = 'tele\nOut';
 		}
 	}
 

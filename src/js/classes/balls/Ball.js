@@ -71,7 +71,9 @@ class Ball {
 
     show() {
         fill('red');
-        noStroke();
+        stroke(0);
+        strokeWeight(1);
         ellipse(this.x, this.y, cellSize / 2, cellSize / 2);
+        
     }
 }
