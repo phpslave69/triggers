@@ -60,12 +60,7 @@ class Cell {
         noStroke();
     }
 
-    checkWorking(){
-        if(this.working == false){
-            return false;
-        }
-    }
-
+   
     update() {
         return false;
     }

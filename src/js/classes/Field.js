@@ -32,6 +32,7 @@ class Field {
         this.cells[2][6] = new Teleport(2, 6, TELEOUT, 1);
         this.cells[5][6] = new ChangeDir(5, 6, MOVEUP);
         this.cells[5][1] = new ChangeDir(5, 1, MOVERIGHT);
+        this.cells[5][2] = new Switch(5, 2);
     }
 
     update() {

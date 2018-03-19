@@ -16,7 +16,8 @@ class Interface {
             TELEIN: 7,
             TELEOUT: 8,
             COUNTER: 9,
-            RANDOM: 10
+            RANDOM: 10,
+            SWITCH:11
         };
         this.menuCells = [
 
@@ -70,6 +71,11 @@ class Interface {
                 text: 'random',
                 class: 'RandomDir',
                 type: this.types.RANDOM
+            }, {
+                color: 'darkorange',
+                text: 'switch',
+                class: 'Switch',
+                type: this.types.SWITCH
             }, {
                 color: 'red',
                 text: 'remover',
@@ -181,6 +187,10 @@ class Interface {
                         port = prompt('Enter port: ');
                         field.cells[x][y] = new Teleport(x, y, TELEOUT, port);
                         break;
+                    case this.types.SWITCH:
+                        field.cells[x][y] = new Switch(x, y);
+                        break;
+                    
                     case this.types.RANDOM:
                         let locked = prompt('Enter locked directions divided with space: LEFT RIGHT UP DOWN');
                         let res = locked.split(" ");
