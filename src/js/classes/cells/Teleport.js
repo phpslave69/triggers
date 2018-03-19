@@ -42,9 +42,13 @@ class Teleport extends Cell {
     }
 
     update() {
+        this.show();
+       if(this.working == false){
+            return false;
+        }
         if (this.type == TELEIN) {
             this.teleport();
         }
-        this.show();
+        
     }
 }

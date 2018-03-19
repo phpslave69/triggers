@@ -22,7 +22,7 @@ class Field {
 
     addInitCells() {
         this.cells[0][1] = new Spawner(0, 1, MOVERIGHT, 100, 1);
-        this.cells[7][1] = new Destructor(7, 1);
+        this.cells[13][1] = new Destructor(13, 1);
         this.cells[3][1] = new ChangeDir(3, 1, MOVEDOWN);
         this.cells[3][3] = new Counter(3, 3);
         this.cells[5][3] = new Counter(5, 3);

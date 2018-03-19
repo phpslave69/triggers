@@ -23,8 +23,10 @@ class RandomDir extends ChangeDir{
 	}
 
 	update(){
-		//this.changeDir();
-		this.getDir();
 		this.show();
+		if(this.working == false){
+            return false;
+        }
+		this.getDir();
 	}
 }

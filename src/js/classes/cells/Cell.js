@@ -14,6 +14,7 @@ class Cell {
         this.getDist = 1;
         this.passedBalls = [];
         this.passed = false;
+        this.working = true;
     }
 
     getNearBall() {
@@ -49,6 +50,20 @@ class Cell {
         fill(this.textColor);
         text(this.text, this.x - cellSize / 2 + 5, this.y);
         rectMode(CORNER);
+        if(this.working){
+            fill('green');
+        }else{
+            fill('red');
+        }
+        stroke(255);
+        ellipse(this.x + cellSize/2 - 7, this.y - cellSize / 2 + 7, 10, 10);
+        noStroke();
+    }
+
+    checkWorking(){
+        if(this.working == false){
+            return false;
+        }
     }
 
     update() {

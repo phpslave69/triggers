@@ -20,7 +20,11 @@ class Destructor extends Cell {
     }
 
     update() {
-        this.destroy();
         this.show();
+        if(this.working == false){
+            return false;
+        }
+        this.destroy();
+        
     }
 }

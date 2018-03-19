@@ -51,6 +51,9 @@ class ChangeDir extends Cell {
 
     update() {
         this.show();
+        if(this.working == false){
+            return false;
+        }
         this.changeDir();
     }
 

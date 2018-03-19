@@ -3,6 +3,7 @@ class Counter extends Cell{
 		super(x,y);
 		this.color = 'deeppink';
 		this.text = 0;
+		this.textColor = 'white';
 		this.counted = [];
 	}
 
@@ -15,6 +16,9 @@ class Counter extends Cell{
 
 	update(){
 		this.show();
+		if(this.working == false){
+            return false;
+        }
 		this.counter();
 	}
 }
