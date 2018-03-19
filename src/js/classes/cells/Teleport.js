@@ -29,12 +29,12 @@ class Teleport extends Cell {
                 }
             }
         }
-        let balls = this.getNearBall();
-        if (balls !== false) {
-            for (let i = 0; i < balls.length; i++) {
+        this.getNearBall();
+        if (this.passedBalls.length) {
+            for (let i = 0; i < this.passedBalls.length; i++) {
                 if (flag) {
-                    field.balls[balls[i]].x = field.cells[link[0]][link[1]].x;
-                    field.balls[balls[i]].y = field.cells[link[0]][link[1]].y;
+                    field.balls[this.passedBalls[i]].x = field.cells[link[0]][link[1]].x;
+                    field.balls[this.passedBalls[i]].y = field.cells[link[0]][link[1]].y;
                 }
 
             }

@@ -33,7 +33,9 @@ class Ball {
                 this.x += this.speed;
                 break;
             default:
-                console.log('no dir!');
+                this.x += this.speed;
+                break;
+                //console.log('no dir!');
         }
         //if the bal have reached the border
         let flag = false;

@@ -13,9 +13,9 @@ class Destructor extends Cell {
     }
 
     destroy() {
-        let ballId = this.getNearBall();
-        if (ballId !== false) {
-            field.balls.splice(ballId, 1);
+        this.getNearBall();
+        for(let i = 0; i < this.passedBalls.length; i++){
+            field.balls.splice(this.passedBalls[i], 1);
         }
     }
 
