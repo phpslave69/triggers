@@ -94,17 +94,21 @@ class Interface {
     showMenu() {
         //render buttons
         for (let i = 0; i < this.menuCells.length; i++) {
+            stroke(0);
+            strokeWeight(1);
             fill(this.menuCells[i].color);
             rectMode(CENTER);
             rect(i * cellSize + cellSize / 2, height + cellSize / 2, cellSize, cellSize);
             textSize(12);
-            noStroke();
             fill('white');
+            noStroke();
             text(this.menuCells[i].text, i * cellSize + 5, height + cellSize / 2);
             rectMode(CORNER);
         }
         //render clear btn
         fill('red');
+        stroke(0);
+        strokeWeight(1);
         rectMode(CENTER);
         rect(this.menuCells.length * cellSize + cellSize / 2, height + cellSize / 2, cellSize, cellSize);
         textSize(12);
