@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f59f46d7-d9bc-4936-8380-bc1e6932db35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/classes/Interface.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/Field.js" afterPath="$PROJECT_DIR$/src/js/classes/Field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Teleport.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Teleport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/idea.js" afterPath="$PROJECT_DIR$/src/js/idea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/RandomDir.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/RandomDir.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Teleport.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Teleport.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/classes/cells/Teleport.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="651">
@@ -84,6 +79,28 @@
               <folding>
                 <element signature="n#!!doc;n#Destructor#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangeDir.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/classes/cells/ChangeDir.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="40" column="29" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+              <folding>
+                <element signature="n#!!doc;n#ChangeDir#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomDir.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/classes/cells/RandomDir.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/js/idea.js" />
         <option value="$PROJECT_DIR$/src/js/classes/Interface.js" />
         <option value="$PROJECT_DIR$/src/js/classes/cells/Teleport.js" />
+        <option value="$PROJECT_DIR$/src/js/classes/cells/RandomDir.js" />
       </list>
     </option>
   </component>
@@ -438,16 +456,15 @@
       <workItem from="1507631906327" duration="447000" />
       <workItem from="1521127906986" duration="4946000" />
       <workItem from="1521174684436" duration="8388000" />
-      <workItem from="1521216074735" duration="6423000" />
+      <workItem from="1521216074735" duration="6860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20204000" />
+    <option name="totallyTimeSpent" value="20641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21024546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -627,16 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/classes/cells/ChangeDir.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="40" column="29" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc;n#ChangeDir#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -698,6 +705,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="36" column="78" lean-forward="false" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/classes/cells/ChangeDir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="40" column="29" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc;n#ChangeDir#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/classes/cells/RandomDir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
