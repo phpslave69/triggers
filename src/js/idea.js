@@ -23,6 +23,25 @@ const MOVEDOWN = 3;
 const MOVELEFT = 4;
 const TELEIN = 0;
 const TELEOUT = 1;
+let colorNames = {
+    WHITE:0,
+    RED:1,
+    BLUE:2,
+    YELLOW:3
+}
+let colors = [
+    {id:0, color:'white'},
+    {id:1, color:'red'},
+    {id:2, color:'blue'},
+    {id:3, color:'yellow'}
+];
+
+let ColorCount = 0;
+for (let k in colors) {
+    if (colors.hasOwnProperty(k)) {
+        ++ColorCount;
+    }
+}
 
 function setup() {
     frameRate(fr);

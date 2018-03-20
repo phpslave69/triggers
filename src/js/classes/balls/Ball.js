@@ -1,14 +1,11 @@
-/**
- * Created by Sergey on 15.03.2018.
- */
-
 class Ball {
-    constructor(x, y, dir, speed) {
+    constructor(x, y, dir, speed, color) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.speed = speed / 100;
         this.id = ballId++;
+        this.color = color;
     }
 
     update() {
@@ -72,7 +69,7 @@ class Ball {
     }
 
     show() {
-        fill('red');
+        fill(this.color);
         stroke(0);
         strokeWeight(1);
         ellipse(this.x, this.y, cellSize / 2, cellSize / 2);

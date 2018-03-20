@@ -17,7 +17,8 @@ class Interface {
             TELEOUT: 8,
             COUNTER: 9,
             RANDOM: 10,
-            SWITCH: 11
+            SWITCH: 11,
+            RANDOMSPAWN: 12,
         };
         this.menuCells = [
             {
@@ -75,6 +76,11 @@ class Interface {
                 text: 'switch',
                 class: 'Switch',
                 type: this.types.SWITCH
+            }, {
+                color: 'darkred',
+                text: 'random \nspawner',
+                class: 'RandomSpawner',
+                type: this.types.RANDOMSPAWN
             }, {
                 color: 'red',
                 text: 'remover',
@@ -150,6 +156,12 @@ class Interface {
                         }
                     }
                 }
+                //for spawn
+                let spawn;
+                let dir;
+                let rate;
+                let speed;
+                let ballColor;
                 switch (this.state) {
                     case this.types.EMPTY:
                         field.cells[x][y] = new Cell(x, y);
@@ -173,9 +185,10 @@ class Interface {
                         field.cells[x][y] = new Destructor(x, y);
                         break;
                     case this.types.SPAWN:
-                        let speed = prompt('Speed: ~10 - 200', 100);
-                        let dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
-                        let rate = prompt('Spawn rate per tick: ~1-3', 1);
+                        speed = prompt('Speed: ~10 - 200', 100);
+                        dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
+                        rate = prompt('Spawn rate per tick: ~1-3', 1);
+                        ballColor = prompt('Ball color: ', 'red');
                         if (speed < 10 || speed > 200 || isNaN(speed)) {
                             speed = 100;
                         }
@@ -198,8 +211,57 @@ class Interface {
                             default:
                                 dir = MOVEDOWN;
                         }
-                        field.cells[x][y] = new Spawner(x, y, dir, speed, rate);
+
+                        switch (ballColor.toLowerCase()) {
+                            case 'white':
+                                ballColor = colorNames.WHITE;
+                                break;
+                            case 'red':
+                                ballColor = colorNames.RED;
+                                break;
+                            case 'blue':
+                                ballColor = colorNames.BLUE;
+                                break;
+                            case 'yellow':
+                                ballColor = colorNames.YELLOW;
+                                break;
+                            default:
+                                ballColor = colorNames.WHITE;
+                                break;
+                        }
+                        field.cells[x][y] = new Spawner(x, y, dir, speed, rate, ballColor);
                         break;
+                    case this.types.RANDOMSPAWN:
+                        speed = prompt('Speed: ~10 - 200', 100);
+                        dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
+                        rate = prompt('Spawn rate per tick: ~1-3', 1);
+                
+                        if (speed < 10 || speed > 200 || isNaN(speed)) {
+                            speed = 100;
+                        }
+                        if (rate < 1 || rate > 10 || isNaN(rate)) {
+                            rate = 1;
+                        }
+                        switch (dir.toLowerCase()) {
+                            case 'up':
+                                dir = MOVEUP;
+                                break;
+                            case 'down':
+                                dir = MOVEDOWN;
+                                break;
+                            case 'left':
+                                dir = MOVELEFT;
+                                break;
+                            case 'right':
+                                dir = MOVERIGHT;
+                                break;
+                            default:
+                                dir = MOVEDOWN;
+                                break;
+                        }
+                        field.cells[x][y] = new RandomSpawner(x, y, dir, speed, rate);
+                        break;
+
                     case this.types.TELEIN:
                         port = prompt('Enter port: ', port + 1);
                         field.cells[x][y] = new Teleport(x, y, TELEIN, port);
