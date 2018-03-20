@@ -34,21 +34,26 @@ class ChangeDir extends Cell {
     }
 
     changeDir() {
-        let balls = this.getNearBall();
-        if (balls !== false) {
-            for (let i = 0; i < balls.length; i++) {
-                if (field.balls[balls[i]].dir == this.dir) {
+        let flag = false;
+        if (this.getNearBall()) {
+            for (let i = 0; i < this.passedBalls.length; i++) {
+                if (field.balls[this.passedBalls[i]].dir == this.dir) {
                     continue;
                 }
-                field.balls[balls[i]].dir = this.dir;
-                field.balls[balls[i]].x = this.x;
-                field.balls[balls[i]].y = this.y;
+                flag = true;
+                field.balls[this.passedBalls[i]].dir = this.dir;
+                field.balls[this.passedBalls[i]].x = this.x;
+                field.balls[this.passedBalls[i]].y = this.y;
             }
         }
+        return flag;
     }
 
     update() {
         this.show();
+        if(this.working == false){
+            return false;
+        }
         this.changeDir();
     }
 

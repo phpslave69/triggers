@@ -6,12 +6,12 @@ class RandomDir extends ChangeDir {
         this.lockDir = lockDir;
         this.dirs = [MOVEUP, MOVEDOWN, MOVELEFT, MOVERIGHT];
         this.rate = changeRate;
-        this.getDir();
         this.setText();
     }
 
     getDir() {
-        if (tick % this.rate == 0 && ticked) {
+        this.changeDir();
+        if (this.passed) {
             while (true) {
                 this.dir = this.dirs[Math.floor(random(0, 4))];
                 if (this.lockDir.includes(this.dir) == false) {
@@ -23,8 +23,11 @@ class RandomDir extends ChangeDir {
     }
 
     update() {
-        this.getDir();
-        this.changeDir();
         this.show();
+        if (this.working == false) {
+            return false;
+        }
+        this.getDir();
     }
+
 }

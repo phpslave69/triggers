@@ -10,6 +10,7 @@ class Spawner extends Cell {
         this.speed = speed;
         this.color = 'green';
         this.text = 'spawn';
+        this.textColor = 'white';
     }
 
     spawn() {
@@ -20,6 +21,9 @@ class Spawner extends Cell {
 
     update() {
         this.show();
+       if(this.working == false){
+            return false;
+        }
         this.spawn();
     }
 }
