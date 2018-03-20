@@ -21,9 +21,8 @@ class Switch extends Cell {
 
         } else {
             this.switchCell();
-            this.text = 'Switch';
+            this.text = 'Switch \n' + this.connected[0] + ' ' + this.connected[1];
         }
         this.show();
     }
-
 }

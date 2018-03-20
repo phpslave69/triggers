@@ -29,5 +29,4 @@ class RandomDir extends ChangeDir {
         }
         this.getDir();
     }
-
 }

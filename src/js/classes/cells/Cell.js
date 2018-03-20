@@ -59,8 +59,7 @@ class Cell {
         ellipse(this.x + cellSize / 2 - 7, this.y - cellSize / 2 + 7, 10, 10);
         noStroke();
     }
-
-
+    
     update() {
         return false;
     }

@@ -21,7 +21,7 @@ class Spawner extends Cell {
 
     update() {
         this.show();
-       if(this.working == false){
+        if (this.working == false) {
             return false;
         }
         this.spawn();

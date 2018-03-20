@@ -55,7 +55,6 @@ function mousePressed() {
                     field.cells[i][j].connected = [];
                     field.cells[i][j].connected[0] = x;
                     field.cells[i][j].connected[1] = y;
-                    console.log('connect');
                 }
             }
         }
@@ -65,6 +64,7 @@ function mousePressed() {
     if (y == rows && interFace.state == interFace.types.NONE) {
         interFace.setState();
     }
+    
     //set a cell
     if (interFace.state != interFace.types.NONE) {
         interFace.setState();

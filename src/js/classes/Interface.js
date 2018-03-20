@@ -17,10 +17,9 @@ class Interface {
             TELEOUT: 8,
             COUNTER: 9,
             RANDOM: 10,
-            SWITCH:11
+            SWITCH: 11
         };
         this.menuCells = [
-
             {
                 color: 'green',
                 text: 'spawn',
@@ -87,6 +86,7 @@ class Interface {
     }
 
     showMenu() {
+        //render buttons
         for (let i = 0; i < this.menuCells.length; i++) {
             fill(this.menuCells[i].color);
             rectMode(CENTER);
@@ -97,6 +97,15 @@ class Interface {
             text(this.menuCells[i].text, i * cellSize + 5, height + cellSize / 2);
             rectMode(CORNER);
         }
+        //render clear btn
+        fill('red');
+        rectMode(CENTER);
+        rect(this.menuCells.length * cellSize + cellSize / 2, height + cellSize / 2, cellSize, cellSize);
+        textSize(12);
+        noStroke();
+        fill('white');
+        text('clear', this.menuCells.length * cellSize + 5, height + cellSize / 2);
+        rectMode(CORNER);
     }
 
     showCellOnCursor() {
@@ -116,19 +125,31 @@ class Interface {
     }
 
     setState() {
-        if (mouseY > height && mouseY < height + cellSize && mouseX < this.menuCells.length * cellSize) {
+        if (mouseY > height && mouseY < height + cellSize && mouseX < (this.menuCells.length + 1) * cellSize) {
             for (let i = 0; i < this.menuCells.length; i++) {
                 if (mouseX > i * cellSize && mouseX < (i + 1) * cellSize) {
-                    console.log(this.menuCells[i].type);
                     this.state = this.menuCells[i].type;
                     break;
                 }
             }
+            //show clear btn
+            if (mouseX > this.menuCells.length * cellSize && mouseX < (1 + this.menuCells.length) * cellSize) {
+                field.initGrid();
+            }
         } else {
             if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height && this.state != this.types.NONE) {
+                //set cell index
                 let x = Math.floor(mouseX / cellSize);
                 let y = Math.floor(mouseY / cellSize);
-                let port;
+                //set port
+                let port = 0;
+                for (let i = 0; i < cols; i++) {
+                    for (let j = 0; j < rows; j++) {
+                        if (field.cells[i][j].port !== undefined && field.cells[i][j].port > port) {
+                            port = parseInt(field.cells[i][j].port);
+                        }
+                    }
+                }
                 switch (this.state) {
                     case this.types.EMPTY:
                         field.cells[x][y] = new Cell(x, y);
@@ -152,9 +173,9 @@ class Interface {
                         field.cells[x][y] = new Destructor(x, y);
                         break;
                     case this.types.SPAWN:
-                        let speed = prompt('Speed: ~10 - 200');
-                        let dir = prompt('Directions: UP RIGHT DOWN LEFT');
-                        let rate = prompt('Spawn rate per tick: ~1-3');
+                        let speed = prompt('Speed: ~10 - 200', 100);
+                        let dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
+                        let rate = prompt('Spawn rate per tick: ~1-3', 1);
                         if (speed < 10 || speed > 200 || isNaN(speed)) {
                             speed = 100;
                         }
@@ -180,17 +201,17 @@ class Interface {
                         field.cells[x][y] = new Spawner(x, y, dir, speed, rate);
                         break;
                     case this.types.TELEIN:
-                        port = prompt('Enter port: ');
+                        port = prompt('Enter port: ', port + 1);
                         field.cells[x][y] = new Teleport(x, y, TELEIN, port);
                         break;
                     case this.types.TELEOUT:
-                        port = prompt('Enter port: ');
+                        port = prompt('Enter port: ', port);
                         field.cells[x][y] = new Teleport(x, y, TELEOUT, port);
                         break;
                     case this.types.SWITCH:
                         field.cells[x][y] = new Switch(x, y);
                         break;
-                    
+
                     case this.types.RANDOM:
                         let locked = prompt('Enter locked directions divided with space: LEFT RIGHT UP DOWN');
                         let res = locked.split(" ");
@@ -214,6 +235,7 @@ class Interface {
                             }
                         }
                         field.cells[x][y] = new RandomDir(x, y, toLock, 1);
+                        break;
                 }
             }
             this.state = this.types.NONE;
@@ -226,5 +248,4 @@ class Interface {
             this.showCellOnCursor();
         }
     }
-
 }
