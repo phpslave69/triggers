@@ -19,6 +19,7 @@ class Interface {
             RANDOM: 10,
             SWITCH: 11,
             RANDOMSPAWN: 12,
+            COLORRECEIVER: 13,
         };
         this.menuCells = [
             {
@@ -81,7 +82,12 @@ class Interface {
                 text: 'random \nspawner',
                 class: 'RandomSpawner',
                 type: this.types.RANDOMSPAWN
-            }, {
+            },{
+                color: 'indigo',
+                text: 'color\nreceiver',
+                class: 'ColorReceiver',
+                type: this.types.COLORRECEIVER
+            },{
                 color: 'red',
                 text: 'remover',
                 class: '',
@@ -277,6 +283,13 @@ class Interface {
                     case this.types.SWITCH:
                         field.cells[x][y] = new Switch(x, y);
                         break;
+                    case this.types.COLORRECEIVER:
+                        //todo colors
+                        return false;
+                        ballColor = prompt('Enter receive color:', 'white, red, blue, yellow');
+                        field.cells[x][y] = new ColorReceiver(x, y, ballColor);
+                        break;
+
 
                     case this.types.RANDOM:
                         let locked = prompt('Enter locked directions divided with space: LEFT RIGHT UP DOWN');
