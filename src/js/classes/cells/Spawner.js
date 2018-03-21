@@ -16,8 +16,8 @@ class Spawner extends Cell {
 
     spawn() {
         if (ticked && tick % this.rate == 0) {
-            field.balls.push(new Ball(this.x, this.y, this.dir, this.speed, 
-            colors[this.ballColor].color));
+            field.balls.push(new Ball(this.x, this.y, this.dir, this.speed,
+                colors[this.ballColor].color));
         }
     }
 

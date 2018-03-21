@@ -12,9 +12,9 @@ class Field {
     }
 
     initGrid() {
-        for (let i = 0; i < cols; i++) {
+        for(let i = 0; i < cols; i++) {
             this.cells[i] = [];
-            for (let j = 0; j < rows; j++) {
+            for(let j = 0; j < rows; j++) {
                 this.cells[i][j] = new Cell(j, i);
             }
         }
@@ -42,22 +42,22 @@ class Field {
     }
 
     updateCells() {
-        for (let i = 0; i < cols; i++) {
-            for (let j = 0; j < rows; j++) {
+        for(let i = 0; i < cols; i++) {
+            for(let j = 0; j < rows; j++) {
                 this.cells[i][j].update();
             }
         }
     }
 
     updateBalls() {
-        for (let i = 0; i < this.balls.length; i++) {
+        for(let i = 0; i < this.balls.length; i++) {
             this.balls[i].update();
         }
     }
 
     show() {
-        for (let i = 0; i < cols; i++) {
-            for (let j = 0; j < rows; j++) {
+        for(let i = 0; i < cols; i++) {
+            for(let j = 0; j < rows; j++) {
                 noFill();
                 stroke(0);
                 strokeWeight(1);

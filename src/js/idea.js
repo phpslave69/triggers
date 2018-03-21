@@ -24,16 +24,16 @@ const MOVELEFT = 4;
 const TELEIN = 0;
 const TELEOUT = 1;
 let colorNames = {
-    WHITE:0,
-    RED:1,
-    BLUE:2,
-    YELLOW:3
+    WHITE: 0,
+    RED: 1,
+    BLUE: 2,
+    YELLOW: 3
 }
 let colors = [
-    {id:0, color:'white'},
-    {id:1, color:'red'},
-    {id:2, color:'blue'},
-    {id:3, color:'yellow'}
+    {id: 0, color: 'white'},
+    {id: 1, color: 'red'},
+    {id: 2, color: 'blue'},
+    {id: 3, color: 'yellow'}
 ];
 
 let ColorCount = 0;
@@ -83,7 +83,7 @@ function mousePressed() {
     if (y == rows && interFace.state == interFace.types.NONE) {
         interFace.setState();
     }
-    
+
     //set a cell
     if (interFace.state != interFace.types.NONE) {
         interFace.setState();
@@ -94,6 +94,15 @@ function mousePressed() {
 function inField(x, y) {
     if (x < 0 || x > cols || y < 0 || y >= rows) {
         return false;
+    }
+    return true;
+}
+
+function checkUndefined(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == undefined || arr[i] == null) {
+            return false;
+        }
     }
     return true;
 }

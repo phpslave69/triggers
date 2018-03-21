@@ -20,74 +20,72 @@ class Interface {
             SWITCH: 11,
             RANDOMSPAWN: 12,
         };
-        this.menuCells = [
-            {
-                color: 'green',
-                text: 'spawn',
-                class: 'Spawn',
-                type: this.types.SPAWN
-            }, {
-                color: 'black',
-                text: 'destroy',
-                class: 'Destructor',
-                type: this.types.DESTROY
-            }, {
-                color: 'Blue',
-                text: 'Up',
-                class: 'ChangeDir',
-                type: this.types.UP
-            }, {
-                color: 'Blue',
-                text: 'Right',
-                class: 'ChangeDir',
-                type: this.types.RIGHT
-            }, {
-                color: 'Blue',
-                text: 'Down',
-                class: 'ChangeDir',
-                type: this.types.DOWN
-            }, {
-                color: 'Blue',
-                text: 'Left',
-                class: 'ChangeDir',
-                type: this.types.LEFT
-            }, {
-                color: 'crimson',
-                text: 'tele\nIn',
-                class: 'Teleport',
-                type: this.types.TELEIN
-            }, {
-                color: 'crimson',
-                text: 'tele\nOut',
-                class: 'Teleport',
-                type: this.types.TELEOUT
-            }, {
-                color: 'deeppink',
-                text: 'counter',
-                class: 'Counter',
-                type: this.types.COUNTER
-            }, {
-                color: 'cyan',
-                text: 'random',
-                class: 'RandomDir',
-                type: this.types.RANDOM
-            }, {
-                color: 'darkorange',
-                text: 'switch',
-                class: 'Switch',
-                type: this.types.SWITCH
-            }, {
-                color: 'darkred',
-                text: 'random \nspawner',
-                class: 'RandomSpawner',
-                type: this.types.RANDOMSPAWN
-            }, {
-                color: 'red',
-                text: 'remover',
-                class: '',
-                type: this.types.EMPTY
-            }
-        ];
+        this.menuCells = [{
+            color: 'green',
+            text: 'spawn',
+            class: 'Spawn',
+            type: this.types.SPAWN
+        }, {
+            color: 'black',
+            text: 'destroy',
+            class: 'Destructor',
+            type: this.types.DESTROY
+        }, {
+            color: 'Blue',
+            text: 'Up',
+            class: 'ChangeDir',
+            type: this.types.UP
+        }, {
+            color: 'Blue',
+            text: 'Right',
+            class: 'ChangeDir',
+            type: this.types.RIGHT
+        }, {
+            color: 'Blue',
+            text: 'Down',
+            class: 'ChangeDir',
+            type: this.types.DOWN
+        }, {
+            color: 'Blue',
+            text: 'Left',
+            class: 'ChangeDir',
+            type: this.types.LEFT
+        }, {
+            color: 'crimson',
+            text: 'tele\nIn',
+            class: 'Teleport',
+            type: this.types.TELEIN
+        }, {
+            color: 'crimson',
+            text: 'tele\nOut',
+            class: 'Teleport',
+            type: this.types.TELEOUT
+        }, {
+            color: 'deeppink',
+            text: 'counter',
+            class: 'Counter',
+            type: this.types.COUNTER
+        }, {
+            color: 'cyan',
+            text: 'random',
+            class: 'RandomDir',
+            type: this.types.RANDOM
+        }, {
+            color: 'darkorange',
+            text: 'switch',
+            class: 'Switch',
+            type: this.types.SWITCH
+        }, {
+            color: 'darkred',
+            text: 'random \nspawner',
+            class: 'RandomSpawner',
+            type: this.types.RANDOMSPAWN
+        }, {
+            color: 'red',
+            text: 'remover',
+            class: '',
+            type: this.types.EMPTY
+        }];
         this.state = this.types.NONE;
     }
 
@@ -193,6 +191,10 @@ class Interface {
                         dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
                         rate = prompt('Spawn rate per tick: ~1-3', 1);
                         ballColor = prompt('Ball color: ', 'red');
+                        if (!checkUndefined([dir, speed, rate, ballColor])) {
+                            this.state = this.types.NONE;
+                            return false;
+                        }
                         if (speed < 10 || speed > 200 || isNaN(speed)) {
                             speed = 100;
                         }
@@ -233,13 +235,17 @@ class Interface {
                                 ballColor = colorNames.WHITE;
                                 break;
                         }
+
                         field.cells[x][y] = new Spawner(x, y, dir, speed, rate, ballColor);
                         break;
                     case this.types.RANDOMSPAWN:
                         speed = prompt('Speed: ~10 - 200', 100);
                         dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
                         rate = prompt('Spawn rate per tick: ~1-3', 1);
-                
+                        if (!checkUndefined([dir, speed, rate])) {
+                            this.state = this.types.NONE;
+                            return false;
+                        }
                         if (speed < 10 || speed > 200 || isNaN(speed)) {
                             speed = 100;
                         }
@@ -268,10 +274,18 @@ class Interface {
 
                     case this.types.TELEIN:
                         port = prompt('Enter port: ', port + 1);
+                        if (!checkUndefined([port])) {
+                            this.state = this.types.NONE;
+                            return false;
+                        }
                         field.cells[x][y] = new Teleport(x, y, TELEIN, port);
                         break;
                     case this.types.TELEOUT:
                         port = prompt('Enter port: ', port);
+                        if (!checkUndefined([port])) {
+                            this.state = this.types.NONE;
+                            return false;
+                        }
                         field.cells[x][y] = new Teleport(x, y, TELEOUT, port);
                         break;
                     case this.types.SWITCH:
@@ -280,6 +294,10 @@ class Interface {
 
                     case this.types.RANDOM:
                         let locked = prompt('Enter locked directions divided with space: LEFT RIGHT UP DOWN');
+                        if (!checkUndefined([locked])) {
+                            this.state = this.types.NONE;
+                            return false;
+                        }
                         let res = locked.split(" ");
                         let toLock = [];
                         for (let i = 0; i < res.length; i++) {

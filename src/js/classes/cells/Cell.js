@@ -17,14 +17,18 @@ class Cell {
         this.working = true;
     }
 
+    validate() {
+        return false;
+    }
+
     getNearBall() {
         let a = [];
         let flag = false;
         this.passed = false;
-        for (let i = field.balls.length - 1; i >= 0; i--) {
-            if (dist(this.x, this.y, field.balls[i].x, field.balls[i].y) < this.getDist) {
+        for(let i = field.balls.length - 1; i >= 0; i--) {
+            if(dist(this.x, this.y, field.balls[i].x, field.balls[i].y) < this.getDist) {
                 a.push(i);
-                if (this.passedBalls.includes(i) == false) {
+                if(this.passedBalls.includes(i) == false) {
                     this.passedBalls.push(i);
                     this.passed = true;
                 }
@@ -32,8 +36,8 @@ class Cell {
             }
         }
 
-        for (let i = 0; i < this.passedBalls.length; i++) {
-            if (a.includes(this.passedBalls[i]) == false) {
+        for(let i = 0; i < this.passedBalls.length; i++) {
+            if(a.includes(this.passedBalls[i]) == false) {
                 this.passedBalls.splice(i, 1);
                 break;
             }
@@ -50,7 +54,7 @@ class Cell {
         fill(this.textColor);
         text(this.text, this.x - cellSize / 2 + 5, this.y);
         rectMode(CORNER);
-        if (this.working) {
+        if(this.working) {
             fill('green');
         } else {
             fill('red');
@@ -59,7 +63,7 @@ class Cell {
         ellipse(this.x + cellSize / 2 - 7, this.y - cellSize / 2 + 7, 10, 10);
         noStroke();
     }
-    
+
     update() {
         return false;
     }
