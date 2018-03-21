@@ -1,5 +1,5 @@
 # triggers
 
-A little game, where you can create some stuff
+This is a logical game with no point yet
 
 Check the latest version here https://vinitskyss.github.io/triggers/
