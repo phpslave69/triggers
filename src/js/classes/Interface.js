@@ -332,4 +332,5 @@ class Interface {
             this.showCellOnCursor();
         }
     }
+
 }

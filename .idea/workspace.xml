@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f59f46d7-d9bc-4936-8380-bc1e6932db35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/Field.js" afterPath="$PROJECT_DIR$/src/js/classes/Field.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/classes/cells/ColorReceiver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/Interface.js" afterPath="$PROJECT_DIR$/src/js/classes/Interface.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Cell.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Cell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/RandomSpawner.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/RandomSpawner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Spawner.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Spawner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/classes/cells/Teleport.js" afterPath="$PROJECT_DIR$/src/js/classes/cells/Teleport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/idea.js" afterPath="$PROJECT_DIR$/src/js/idea.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,14 +26,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interface.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Interface.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/classes/Interface.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="298" column="41" lean-forward="true" selection-start-line="298" selection-start-column="41" selection-end-line="298" selection-end-column="41" />
-              <folding>
-                <element signature="n#!!doc;n#Interface#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-3255">
+              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="28" column="7" lean-forward="false" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,7 +150,6 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/js/classes/cells/Destructor.js" />
         <option value="$PROJECT_DIR$/src/js/classes/balls/Ball.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/js/classes/Field.js" />
         <option value="$PROJECT_DIR$/src/js/classes/cells/Cell.js" />
         <option value="$PROJECT_DIR$/src/js/classes/cells/Teleport.js" />
@@ -157,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/js/classes/cells/Spawner.js" />
         <option value="$PROJECT_DIR$/src/js/idea.js" />
         <option value="$PROJECT_DIR$/src/js/classes/Interface.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -474,12 +477,12 @@
       <workItem from="1521216074735" duration="6860000" />
       <workItem from="1521530783189" duration="4668000" />
       <workItem from="1521547527457" duration="629000" />
-      <workItem from="1521650414250" duration="374000" />
+      <workItem from="1521650414250" duration="729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26312000" />
+    <option name="totallyTimeSpent" value="26667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -546,9 +549,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5187">
           <caret line="249" column="5" lean-forward="false" selection-start-line="249" selection-start-column="5" selection-end-line="249" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc;n#Interface#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -638,9 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2163">
           <caret line="188" column="59" lean-forward="false" selection-start-line="188" selection-start-column="59" selection-end-line="188" selection-end-column="59" />
-          <folding>
-            <element signature="n#!!doc;n#Interface#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -831,13 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/classes/cells/Destructor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -930,11 +922,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/classes/Interface.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="298" column="41" lean-forward="true" selection-start-line="298" selection-start-column="41" selection-end-line="298" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc;n#Interface#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-3255">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="7" lean-forward="false" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
