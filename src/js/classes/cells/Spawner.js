@@ -3,7 +3,7 @@
  */
 
 class Spawner extends Cell {
-    constructor(x, y, dir, speed, spawnrate, ballColor) {
+    constructor(x, y, dir, speed, spawnrate) {
         super(x, y);
         this.dir = dir;
         this.rate = spawnrate;
@@ -11,7 +11,6 @@ class Spawner extends Cell {
         this.color = 'green';
         this.text = 'spawn';
         this.textColor = 'white';
-        this.ballColor = ballColor;
     }
 
     spawn() {

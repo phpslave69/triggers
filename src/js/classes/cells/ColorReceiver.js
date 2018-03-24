@@ -3,11 +3,20 @@ class ColorReceiver extends Destructor{
 		super(x, y);
 		this.receiveColor = color;
 		this.color = color;
+		this.text = 0;
 	}
 
 	checkColor(){
+		this.getNearBall();
 		if(this.passed){
-			console.log(this.passedBalls);
+			let index = this.passedBalls[this.passedBalls.length  - 1];
+			let ballColor = field.balls[index].color;
+			console.log(ballColor);
+			if(ballColor == this.color){
+				this.text++;
+			}else{
+				this.text--;
+			}
 		}
 	}
 

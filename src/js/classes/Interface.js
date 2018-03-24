@@ -19,13 +19,20 @@ class Interface {
             RANDOM: 10,
             SWITCH: 11,
             RANDOMSPAWN: 12,
+            COLORRECEIVER: 13,
+            PATTERNSPAWN: 14,
         };
         this.menuCells = [{
             color: 'green',
             text: 'spawn',
-            class: 'Spawn',
+            class: 'ColorSpawner',
             type: this.types.SPAWN
-        }, {
+        },{
+            color: 'seagreen',
+            text: 'patternspawn',
+            class: 'PatternSpawner',
+            type: this.types.PATTERNSPAWN
+        },{
             color: 'black',
             text: 'destroy',
             class: 'Destructor',
@@ -85,6 +92,11 @@ class Interface {
             text: 'remover',
             class: '',
             type: this.types.EMPTY
+        }, {
+            color: 'rosybrown',
+            text: 'color\nreceiver',
+            class: 'ColorReceiver',
+            type: this.types.COLORRECEIVER
         }];
         this.state = this.types.NONE;
     }
@@ -158,12 +170,15 @@ class Interface {
                         }
                     }
                 }
-                //for spawn
+
                 let spawn;
                 let dir;
                 let rate;
                 let speed;
                 let ballColor;
+                let pattern;
+                let res;
+
                 switch (this.state) {
                     case this.types.EMPTY:
                         field.cells[x][y] = new Cell(x, y);
@@ -185,6 +200,14 @@ class Interface {
                         break;
                     case this.types.DESTROY:
                         field.cells[x][y] = new Destructor(x, y);
+                        break;
+                    case this.types.COLORRECEIVER:
+                        ballColor = prompt('Receiver color: red, blue etc', 'red');
+                        if (!checkUndefined([ballColor])) {
+                            this.state = this.types.NONE;
+                            return false;
+                        }
+                        field.cells[x][y] = new ColorReceiver(x, y, ballColor);
                         break;
                     case this.types.SPAWN:
                         speed = prompt('Speed: ~10 - 200', 100);
@@ -236,7 +259,7 @@ class Interface {
                                 break;
                         }
 
-                        field.cells[x][y] = new Spawner(x, y, dir, speed, rate, ballColor);
+                        field.cells[x][y] = new ColorSpawner(x, y, dir, speed, rate, ballColor);
                         break;
                     case this.types.RANDOMSPAWN:
                         speed = prompt('Speed: ~10 - 200', 100);
@@ -271,6 +294,48 @@ class Interface {
                         }
                         field.cells[x][y] = new RandomSpawner(x, y, dir, speed, rate);
                         break;
+                    case this.types.PATTERNSPAWN:
+                        speed = prompt('Speed: ~10 - 200', 100);
+                        dir = prompt('Directions: UP RIGHT DOWN LEFT', 'right');
+                        rate = prompt('Spawn rate per tick: ~1-3', 1);
+                        pattern = prompt('Enter pattern: red blue ...', 'red blue');
+                        res = pattern.split(" ");
+                        console.log(res);
+                        for (let i = 0; i < res.length; i++) {
+                            for(let c in color){
+                                console.log(c.color);
+                            }    
+                        }
+                        if (!checkUndefined([dir, speed, rate, res])) {
+                            console.log(1);
+                            this.state = this.types.NONE;
+                            return false;
+                        }
+                        if (speed < 10 || speed > 200 || isNaN(speed)) {
+                            speed = 100;
+                        }
+                        if (rate < 1 || rate > 10 || isNaN(rate)) {
+                            rate = 1;
+                        }
+                        switch (dir.toLowerCase()) {
+                            case 'up':
+                                dir = MOVEUP;
+                                break;
+                            case 'down':
+                                dir = MOVEDOWN;
+                                break;
+                            case 'left':
+                                dir = MOVELEFT;
+                                break;
+                            case 'right':
+                                dir = MOVERIGHT;
+                                break;
+                            default:
+                                dir = MOVEDOWN;
+                                break;
+                        }
+                        field.cells[x][y] = new PatternSpawner(x, y, dir, speed, rate, res);
+                        break;
 
                     case this.types.TELEIN:
                         port = prompt('Enter port: ', port + 1);
@@ -298,7 +363,7 @@ class Interface {
                             this.state = this.types.NONE;
                             return false;
                         }
-                        let res = locked.split(" ");
+                        res = locked.split(" ");
                         let toLock = [];
                         for (let i = 0; i < res.length; i++) {
                             switch (res[i].toLowerCase()) {

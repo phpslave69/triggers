@@ -1,4 +1,4 @@
-class RandomSpawner extends Spawner {
+class RandomSpawner extends ColorSpawner {
     constructor(x, y, dir, speed, spawnrate) {
         super(x, y, dir, speed, spawnrate);
         this.text = 'random \nspawner';
