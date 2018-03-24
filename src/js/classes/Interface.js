@@ -88,15 +88,15 @@ class Interface {
             class: 'RandomSpawner',
             type: this.types.RANDOMSPAWN
         }, {
-            color: 'red',
-            text: 'remover',
-            class: '',
-            type: this.types.EMPTY
-        }, {
             color: 'rosybrown',
             text: 'color\nreceiver',
             class: 'ColorReceiver',
             type: this.types.COLORRECEIVER
+        }, {
+            color: 'red',
+            text: 'remover',
+            class: '',
+            type: this.types.EMPTY
         }];
         this.state = this.types.NONE;
     }
@@ -126,6 +126,7 @@ class Interface {
         fill('white');
         text('clear', this.menuCells.length * cellSize + 5, height + cellSize / 2);
         rectMode(CORNER);
+        
     }
 
     showCellOnCursor() {

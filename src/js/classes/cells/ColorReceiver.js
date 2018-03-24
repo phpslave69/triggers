@@ -13,7 +13,6 @@ class ColorReceiver extends Destructor{
 		if(this.passed){
 			let index = this.passedBalls[this.passedBalls.length  - 1];
 			let ballColor = field.balls[index].color;
-			console.log(ballColor);
 			if(ballColor == this.color){
 				this.count++;
 			}else{
