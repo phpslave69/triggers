@@ -21,8 +21,11 @@ class Field {
     }
 
     addInitCells() {
+        this.cells[0][0] = new PatternSpawner(0, 0, MOVERIGHT, 100, 1, ['red', 'blue']);
+        this.cells[5][0] = new ColorReceiver(10, 0, 'red');
         this.cells[0][1] = new ColorSpawner(0, 1, MOVERIGHT, 100, 1, colorNames.RED);
         this.cells[13][1] = new Destructor(13, 1);
+        
         this.cells[3][1] = new ChangeDir(3, 1, MOVEDOWN);
         this.cells[3][3] = new Counter(3, 3);
         this.cells[5][3] = new Counter(5, 3);

@@ -3,7 +3,9 @@ class ColorReceiver extends Destructor{
 		super(x, y);
 		this.receiveColor = color;
 		this.color = color;
-		this.text = 0;
+		this.count = 0;
+		this.text = 'Receiver\n'+this.count;
+		this.textSize = 11;
 	}
 
 	checkColor(){
@@ -13,10 +15,11 @@ class ColorReceiver extends Destructor{
 			let ballColor = field.balls[index].color;
 			console.log(ballColor);
 			if(ballColor == this.color){
-				this.text++;
+				this.count++;
 			}else{
-				this.text--;
+				this.count--;
 			}
+			this.text = 'Receiver\n'+this.count;
 		}
 	}
 

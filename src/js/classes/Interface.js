@@ -29,7 +29,7 @@ class Interface {
             type: this.types.SPAWN
         },{
             color: 'seagreen',
-            text: 'patternspawn',
+            text: 'pattern\nspawn',
             class: 'PatternSpawner',
             type: this.types.PATTERNSPAWN
         },{

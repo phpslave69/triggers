@@ -2,7 +2,7 @@ class PatternSpawner extends Spawner{
 	constructor(x, y, dir, speed, rate, pattern){
 		super(x, y, dir, speed, rate);
 		this.pattern = pattern;
-		this.text = 'pattern';
+		this.text = 'pattern\nspawn';
 		this.color = 'seagreen';
 		this.turn = 0;
 	}
