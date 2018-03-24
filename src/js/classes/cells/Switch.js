@@ -15,6 +15,10 @@ class Switch extends Cell {
     }
 
     update() {
+        this.show();
+        if(this.working == false){
+            return false;
+        }
         if (this.connected == false) {
             this.text = 'Not \nconnected';
             this.textSize = 11;
@@ -23,6 +27,5 @@ class Switch extends Cell {
             this.switchCell();
             this.text = 'Switch \n' + this.connected[0] + ' ' + this.connected[1];
         }
-        this.show();
     }
 }
