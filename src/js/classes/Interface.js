@@ -166,7 +166,7 @@ class Interface {
                 //set cell index
                 let x = Math.floor(mouseX / cellSize);
                 let y = Math.floor(mouseY / cellSize);
-                if(this.removable(x, y) == false){
+                if(this.checkRemovable(x, y) == false){
                     alert('Can not remove this cell!');
                     this.state = this.types.NONE;
                     return false;
