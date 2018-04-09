@@ -15,6 +15,7 @@ class Cell {
         this.passedBalls = [];
         this.passed = false;
         this.working = true;
+        this.removable = true;
     }
 
     validate() {

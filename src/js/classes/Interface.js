@@ -101,6 +101,10 @@ class Interface {
         this.state = this.types.NONE;
     }
 
+    checkRemovable(x, y){
+        return field.cells[x][y].removable;
+    }
+
     showMenu() {
         //render buttons
         for (let i = 0; i < this.menuCells.length; i++) {
@@ -162,6 +166,11 @@ class Interface {
                 //set cell index
                 let x = Math.floor(mouseX / cellSize);
                 let y = Math.floor(mouseY / cellSize);
+                if(this.removable(x, y) == false){
+                    alert('Can not remove this cell!');
+                    this.state = this.types.NONE;
+                    return false;
+                }
                 //set port
                 let port = 0;
                 for (let i = 0; i < cols; i++) {
