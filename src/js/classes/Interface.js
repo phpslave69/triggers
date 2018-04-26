@@ -169,7 +169,7 @@ class Interface {
                 if(this.checkRemovable(x, y) == false){
                     alert('Can not remove this cell!');
                     this.state = this.types.NONE;
-                    return false;
+                        return false;
                 }
                 //set port
                 let port = 0;
